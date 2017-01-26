@@ -1,5 +1,4 @@
-var htmlPreview = document.getElementById('html-preview')
-htmlPreview.innerHTML =
+var profile =
   '<h1>Hi, my name is FIRST_NAME LAST_NAME!</h1>' +
   '<p>DESCRIBE_YOURSELF_INFO</p>' +
   '<p>' +
@@ -8,3 +7,9 @@ htmlPreview.innerHTML =
     'or give me a call at ' +
     '<a href="tel:PHONE_NUMBER" target="_blank">PHONE_NUMBER</a>.' +
   '</p>'
+
+var htmlPreview = document.getElementById('html-preview')
+htmlPreview.innerHTML = profile
+
+var rawPreview = document.getElementById('raw-preview')
+rawPreview.textContent = profile
