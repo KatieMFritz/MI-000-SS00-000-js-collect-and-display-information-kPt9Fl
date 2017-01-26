@@ -1,9 +1,11 @@
+// Input variables
 var firstNameInput = document.getElementById('first-name')
 var lastNameInput = document.getElementById('last-name')
 var descriptionInput = document.getElementById('description')
 var emailInput = document.getElementById('email')
 var phoneInput = document.getElementById('phone')
 
+// What should happen
 var update = function () {
   var firstName = firstNameInput.value
   var lastName = lastNameInput.value
@@ -25,6 +27,7 @@ var update = function () {
   rawPreview.textContent = profile
 }
 
+// When it should happen
 firstNameInput.addEventListener('input', update)
 lastNameInput.addEventListener('input', update)
 descriptionInput.addEventListener('input', update)
