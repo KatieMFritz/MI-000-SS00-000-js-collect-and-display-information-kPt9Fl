@@ -1,15 +1,32 @@
-var profile =
-  '<h1>Hi, my name is FIRST_NAME LAST_NAME!</h1>' +
-  '<p>DESCRIBE_YOURSELF_INFO</p>' +
-  '<p>' +
-    'If you\'re interested in a date, you can email me at ' +
-    '<a href="mailto:EMAIL_ADDRESS" target="_blank">EMAIL_ADDRESS</a> ' +
-    'or give me a call at ' +
-    '<a href="tel:PHONE_NUMBER" target="_blank">PHONE_NUMBER</a>.' +
-  '</p>'
+var firstNameInput = document.getElementById('first-name')
+var lastNameInput = document.getElementById('last-name')
+var descriptionInput = document.getElementById('description')
+var emailInput = document.getElementById('email')
+var phoneInput = document.getElementById('phone')
 
-var htmlPreview = document.getElementById('html-preview')
-htmlPreview.innerHTML = profile
+var update = function () {
+  var firstName = firstNameInput.value
+  var lastName = lastNameInput.value
+  var description = descriptionInput.value
+  var email = emailInput.value
+  var phone = phoneInput.value
+  var profile =
+    '<h1>Hi, my name is ' + firstName + ' ' + lastName + '</h1>' +
+    '<p>' + description + '</p>' +
+    '<p>' +
+      'If you\'re interested in a date, you can email me at ' +
+      '<a href="mailto:' + email + '" target="_blank">' + email + '</a> ' +
+      'or give me a call at ' +
+      '<a href="tel:' + phone + '" target="_blank">' + phone + '</a>.' +
+    '</p>'
+  var htmlPreview = document.getElementById('html-preview')
+  htmlPreview.innerHTML = profile
+  var rawPreview = document.getElementById('raw-preview')
+  rawPreview.textContent = profile
+}
 
-var rawPreview = document.getElementById('raw-preview')
-rawPreview.textContent = profile
+firstNameInput.addEventListener('input', update)
+lastNameInput.addEventListener('input', update)
+descriptionInput.addEventListener('input', update)
+emailInput.addEventListener('input', update)
+phoneInput.addEventListener('input', update)
